@@ -11,11 +11,10 @@ def list_maps(request):
             services.append('<a href="/export/map/%s">%s</a><br>' % ( map['name'], map['name'] ))
     return HttpResponse(services)
 
-def export_map(request):
-    print(request)
+def export_map(request, map_name):
     url = 'http://spires2.cityoffrederick.com/ArcGIS/rest/services/maptorender/MapServer/export?bbox=1189970.24945014%2C637070.413482656%2C1210045.399164%2C645541.933225805&bboxSR=&layers=&layerdefs=&size=1600%2C1200&imageSR=&format=png&transparent=false&dpi=&time=&layerTimeOptions=&f=image'
-    img = requests.get(url.replace('maptorender', map))
-    return img
+    img = requests.get(url.replace('maptorender', map_name))
+    return HttpResponse(img, content_type="image/png")
 
-def test(request):
+def status(request):
     return HttpResponse('Ok')
