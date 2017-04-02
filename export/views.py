@@ -11,10 +11,9 @@ def list_maps(request):
             services.append('<a href="/export/map/%s">%s</a><br>' % ( map['name'], map['name'] ))
     return HttpResponse(services)
 
-def export_map(request, map_name):
-    # $ curl "https://epsg.io/trans?data=-77.430311,39.465278;-77.379034,39.447878&s_srs=4326&t_srs=102685" | jq -r '.[]'
+def export_map(request, map_name, bbox_loc):
     base_url = 'http://spires2.cityoffrederick.com/ArcGIS/rest/services/maptorender/MapServer/export?'
-    bbox_loc = '1189970.24945014%2C637070.413482656%2C1210045.399164%2C645541.933225805'
+    #bbox_loc = '1189970.24945014%2C637070.413482656%2C1210045.399164%2C645541.933225805'
     size = '1600%2C1200'
     export_format = 'png'
 
