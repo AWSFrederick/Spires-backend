@@ -81,6 +81,12 @@ WSGI_APPLICATION = 'spires.wsgi.application'
 #    }
 #}
 
+#CACHES = {
+#  'default': {
+#         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+#  }
+#}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

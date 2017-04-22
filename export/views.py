@@ -1,7 +1,8 @@
 from django.http import HttpResponse
 import requests
+from django.views.decorators.cache import cache_page
 
-
+@cache_page(60 * 15)
 def list_maps(request):
     url = 'http://spires2.cityoffrederick.com/ArcGIS/rest/services/?f=json&pretty=true'
     maps = requests.get(url)
