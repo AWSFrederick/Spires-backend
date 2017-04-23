@@ -62,4 +62,8 @@ def transform_map_kmz(request, map, coordinates):
     export_format = 'png'
     url = '{0}bbox={1}&size={2}&format={3}&transparent=false&f=kmz'.format(base_url, bbox_loc, size, export_format)
     kmz = requests.get(url.replace('maptorender', map))
-    return HttpResponse(kmz)
+
+    response = HttpResponse(content=kmz)
+    response['Content-Type'] = 'application/kmz'
+    response['Content-Disposition'] = 'attachment; filename="%s.kmz"' % 'export'
+    return response
