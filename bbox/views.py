@@ -42,7 +42,7 @@ def transform_map_json(request, map, coordinates):
     bbox_loc = '{0}'.format('%2C'.join(md_coordinates))
     base_url = 'http://spires2.cityoffrederick.com/ArcGIS/rest/services/maptorender/MapServer/export?'
     size = '1600%2C1200'
-    export_format = 'png'
+    export_format = 'svg'
     url = '{0}bbox={1}&size={2}&format={3}&transparent=false&f=pjson'.format(base_url, bbox_loc, size, export_format)
     json = requests.get(url.replace('maptorender', map))
     return HttpResponse(json)
@@ -59,7 +59,7 @@ def transform_map_kmz(request, map, coordinates):
     bbox_loc = '{0}'.format('%2C'.join(md_coordinates))
     base_url = 'http://spires2.cityoffrederick.com/ArcGIS/rest/services/maptorender/MapServer/export?'
     size = '1600%2C1200'
-    export_format = 'png'
+    export_format = 'svg'
     url = '{0}bbox={1}&size={2}&format={3}&transparent=false&f=kmz'.format(base_url, bbox_loc, size, export_format)
     kmz = requests.get(url.replace('maptorender', map))
 
