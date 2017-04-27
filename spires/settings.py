@@ -107,6 +107,7 @@ CACHES = {
     }
 }
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -146,4 +147,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CORS_ORIGIN_ALLOW_ALL = True
