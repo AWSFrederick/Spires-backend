@@ -1,0 +1,8 @@
+{
+    "dev": {
+        "aws_region": "us-east-1",
+        "django_settings": "spires.settings",
+        "profile_name": "aws-frederick",
+        "s3_bucket": "zappa-ep0c7jttz"
+    }
+}

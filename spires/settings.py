@@ -87,16 +87,16 @@ WSGI_APPLICATION = 'spires.wsgi.application'
 #  }
 #}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mapfrederick',
-        'USER': 'mapfrederick',
-        'PASSWORD': 'mapfrederick',
-        'HOST': 'database.rds.mapfrederick.city',
-        'PORT': '5432',
-     }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'mapfrederick',
+#        'USER': 'mapfrederick',
+#        'PASSWORD': 'mapfrederick',
+#        'HOST': 'database.rds.mapfrederick.city',
+#        'PORT': '5432',
+#     }
+#}
 
 CACHES = {
     'default': {
